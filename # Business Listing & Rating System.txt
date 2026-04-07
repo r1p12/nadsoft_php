@@ -1,0 +1,128 @@
+# Business Listing & Rating System
+
+## 📌 Project Overview
+
+This project is a Business Listing system with CRUD operations and a Rating feature using jQuery Raty Plugin.
+
+Users can:
+
+* Add, Edit, Delete businesses
+* Give ratings (0–5 with half-star support)
+* View average rating in real-time
+
+---
+
+##  Tech Stack
+
+* PHP (Core PHP)
+* MySQL
+* jQuery
+* AJAX
+* Bootstrap 5
+* jQuery Raty Plugin
+
+---
+
+##  Project Setup
+
+### 1. Clone / Download Project
+
+Place project inside:
+xampp/htdocs/
+
+Example:
+C:\xampp\htdocs\nadsoft_php
+
+---
+
+### 2. Start Server
+
+* Open XAMPP
+* Start Apache
+* Start MySQL
+
+---
+
+### 3. Database Setup
+
+Open phpMyAdmin and create database:
+nadsoft
+
+Run these SQL queries:
+
+CREATE TABLE businesses (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255),
+address TEXT,
+phone VARCHAR(20),
+email VARCHAR(100),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE ratings (
+id INT AUTO_INCREMENT PRIMARY KEY,
+business_id INT,
+name VARCHAR(100),
+email VARCHAR(100),
+phone VARCHAR(20),
+rating FLOAT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+---
+
+### 4. Configure Database
+
+Open db.php and update:
+
+$conn = new mysqli("localhost", "root", "", "nadsoft");
+
+---
+
+### 5. Raty Plugin Setup
+
+Place files inside:
+
+assets/
+├── jquery.raty.js
+└── images/
+├── star-on.png
+├── star-off.png
+├── star-half.png
+
+Add in header.php:
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="assets/jquery.raty.js"></script>
+
+<script>
+$.fn.raty.defaults.path = 'assets/images';
+</script>
+
+---
+
+### 6. Run Project
+
+Open browser:
+http://localhost/nadsoft_php/
+
+---
+
+## ⭐ Features
+
+✔ Add Business (AJAX + Modal)
+✔ Edit Business
+✔ Delete Business
+✔ Rating System (Raty Plugin)
+✔ Half-star rating support
+✔ Update existing rating (email/phone check)
+✔ Real-time average rating update
+✔ No page refresh (AJAX)
+
+---
+ Author
+
+Ravi Patil
+
+---
